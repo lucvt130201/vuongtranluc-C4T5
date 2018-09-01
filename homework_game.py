@@ -21,7 +21,7 @@ s_pressed = False
 up_pressed = False
 down_pressed = False
 ball_x_v = 1.5
-ball_y_v = 2
+ball_y_v = 3.5
 
 
 loop = True
@@ -61,6 +61,8 @@ while loop:
         ball_x_v = -ball_x_v
     if ball_y <= 0 or ball_y >= 580:
         ball_y_v = -ball_y_v
+
+    # paddle stops when hits walls
     if y1 <= 0:
         w_pressed = False
     if y2 <= 0:
@@ -68,12 +70,7 @@ while loop:
     if y1 >= 480:
         s_pressed = False
     if y2 >= 480:
-        down_pressed = False
-
-
-
-
-
+         down_pressed = False
 
     if w_pressed:
         y1 += -5
